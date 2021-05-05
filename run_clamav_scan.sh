@@ -272,7 +272,7 @@ run_clamav()
 # Save scan report to FILE: -l ${clamscan_log}
 
 if [ $jail_type = "iocage" ] ; then
-	iocage exec "${clamAVJailName}" clamscan -i -r -z -a -l ${clamscan_log} --remove "${scan_location}"
+	iocage exec "${clamAVJailName}" clamscan -i -r -z -a -l ${clamscan_log} "${scan_location}"
 else
 	jexec "${clamAVJailName}" clamscan -i -r -l ${clamscan_log} "${scan_location}"
 fi
